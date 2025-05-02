@@ -53,7 +53,8 @@
     "test:ci": "vitest run --silent --coverage --coverage.reporter=json-summary",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
-    "format": "prettier src/**/*.ts README.md --write"
+    "format": "prettier src/**/*.ts README.md --write",
+    "postinstall": "npm run build"
   },
   "devDependencies": {
     "@eslint/js": "^9.10.0",
