@@ -25,9 +25,20 @@
     "url": "git+https://github.com/needle-di/needle-di.git"
   },
   "type": "module",
-  "module": "./dist/index.js",
-  "exports": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js" 
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
+    }
+  },
   "sideEffects": false,
   "files": [
     "./dist/**/**"
@@ -35,14 +46,15 @@
   "scripts": {
     "check-types": "tsc",
     "check-types:watch": "tsc -w",
-    "build": "tsc -p tsconfig.build.json",
+    "build": "tsc -p tsconfig.build.json && tsc -p tsconfig.build.cjs.json",
     "build:watch": "tsc -p tsconfig.build.json -w",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:ci": "vitest run --silent --coverage --coverage.reporter=json-summary",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
-    "format": "prettier src/**/*.ts README.md --write"
+    "format": "prettier src/**/*.ts README.md --write",
+    "prepare": "npm run build"
   },
   "devDependencies": {
     "@eslint/js": "^9.10.0",
