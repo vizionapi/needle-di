@@ -54,7 +54,7 @@
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
     "format": "prettier src/**/*.ts README.md --write",
-    "postinstall": "pwd && cd ./node_modules/@needle-di/core && npm run build"
+    "postinstall": "tsc -p tsconfig.build.json && tsc -p tsconfig.build.cjs.json"
   },
   "devDependencies": {
     "@eslint/js": "^9.10.0",
