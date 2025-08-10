@@ -25,7 +25,7 @@
     "url": "git+https://github.com/needle-di/needle-di.git"
   },
   "main": "./dist/cjs/index.js",
-  "types": "./dist/cjs/index.d.ts",  
+  "types": "./dist/cjs/index.d.ts",
   "sideEffects": false,
   "files": [
     "./dist/**/**"
@@ -51,8 +51,9 @@
     "@typescript-eslint/parser": "^8.15.0",
     "@vitest/coverage-v8": "^2.1.1",
     "eslint": "^9.14.0",
-    "eslint-plugin-import": "^2.31.0",
     "eslint-import-resolver-typescript": "^3.6.3",
+    "eslint-plugin-import": "^2.31.0",
+    "minimatch": "^10.0.3",
     "prettier": "^3.3.3",
     "typescript": "~5.7.0",
     "typescript-eslint": "^8.6.0",
